@@ -1,6 +1,6 @@
 FROM node:18
 WORKDIR /app
-COPY . .
+COPY ./BE .
 # RUN npm ci
 RUN npm install
 # COPY . .

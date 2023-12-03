@@ -43,18 +43,18 @@ jobs:
         REPOSITORY: 733787730018.dkr.ecr.us-east-1.amazonaws.com/thuy-udacity-repo
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
-        docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+        docker build -t $REPOSITORY:$IMAGE_TAG .
+        docker push $REPOSITORY:$IMAGE_TAG
 
 # 
 
 
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v4
-      with:
-        context: .
-        push: true
-        tags: 733787730018.dkr.ecr.us-east-1.amazonaws.com/thuy-udacity-repo/cicd-image:latest
+    # - name: Build and push Docker image
+    #   uses: docker/build-push-action@v4
+    #   with:
+    #     context: .
+    #     push: true
+    #     tags: 733787730018.dkr.ecr.us-east-1.amazonaws.com/thuy-udacity-repo/cicd-image:latest
 
     - name: Set up kubectl
       uses: azure/setup-kubectl@v3

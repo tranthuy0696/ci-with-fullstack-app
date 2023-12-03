@@ -41,7 +41,7 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         REPOSITORY: 733787730018.dkr.ecr.us-east-1.amazonaws.com/thuy-udacity-repo
-        IMAGE_TAG: ${{ github.sha }}
+        IMAGE_TAG: latest
       run: |
         docker build -t $REPOSITORY:$IMAGE_TAG .
         docker push $REPOSITORY:$IMAGE_TAG

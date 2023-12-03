@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: my-k8s-app
-        image: 733787730018.dkr.ecr.us-east-1.amazonaws.com/thuy-udacity-repo/cicd-image:latest
+        image: 733787730018.dkr.ecr.us-east-1.amazonaws.com/thuy-udacity-repo:${{ github.sha }}
         ports:
         - containerPort: 3000
